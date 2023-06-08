@@ -1,28 +1,23 @@
 function createTable() {
     //Write your code here
-	let rows = prompt("Input number of rows");
-	if(rows<2){
-		alert("please enter value >=2");
-		return;
-	}
-	let columns= prompt("input number of columns");
-	if(columns<3){
-		alert("please enter value >=2");
-		return;
-	}
+	  let rn = prompt("Input number of rows");
+  console.log(rn);
+  let cn = prompt("Input number of columns");
+  console.log(cn);
 
-	let myTable = document.getElementById('myTable');
+  let table = document.querySelector("#myTable");
 
-	for(let row=0;row<rows;row++){
-		let tr = document.createElement('tr');
-		for(let col=0;col<columns;col++){
-			let td = document.createElement('td');
-				td.innerText= `Row-${row} Column-${col}`;
-			tr.appendChild(td);
-		}
+  for (let i = 0; i < rn; i++) {
+    let row = document.createElement("tr");
 
-			myTable.appendChild(tr);
-	}
+    for (let j = 0; j < cn; j++) {
+      let td = document.createElement("td");
+      td.innerText = `Row-${i} Column-${j}`;
+      row.appendChild(td);
+    }
 
+    table.appendChild(row);
+
+  }
   
 }
